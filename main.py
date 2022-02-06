@@ -1,14 +1,9 @@
 from random import choice
+import argparse
+import sys
 
 EYES=[':',';','=','X','8','B']
-MOUTHS=['|',')','(','C','O','P','p','b','^','3','w','D','d','I','v','"','S','>','<','X',']','[','}']
-
-def all():
-    '''prints all possible emoticons'''
-    for eye in EYES:
-        for mouth in MOUTHS:
-            if mouth!=eye: # checks eyes and mouth are not the same character cuz that'll be kinda ugly
-                print(f'{eye}{mouth}')
+MOUTHS=['|',')','(','C','O','P','p','b','^','3','w','D','d','I','v','>','<','X',']','[','}']
 
 def random(n=1):
     '''prints n random emoticon'''
@@ -18,7 +13,14 @@ def random(n=1):
             mouth=choice(MOUTHS)
             if mouth!=eye: # checks eyes and mouth are not the same character cuz that'll be kinda ugly
                 break
-        print(f'{eye}{mouth}')
+        sys.stdout.write(f'{eye}{mouth}\n')
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--n', type=int, default=1,
+                        help='number of random emoticons?')
+    args = parser.parse_args()
+    random(n=args.n)
 
 if __name__=='__main__':
-    all()
+    main()
