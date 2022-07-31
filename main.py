@@ -5,7 +5,7 @@ import sys
 EYES=[':',';','=','X','8','B']
 MOUTHS=['|',')','(','C','O','P','p','b','^','3','w','D','d','I','v','>','<','X',']','[','}']
 
-def random(n=1):
+def random_emoticon(n=1):
     '''prints n random emoticon'''
     for i in range(n):
         eye=choice(EYES)
@@ -20,7 +20,7 @@ def main():
     parser.add_argument('--n', type=int, default=1,
                         help='number of random emoticons?')
     args = parser.parse_args()
-    random(n=args.n)
+    random_emoticon(n=args.n)
 
 if __name__=='__main__':
     main()
