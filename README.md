@@ -1,5 +1,5 @@
 # Emoticons
-Creates emoticons using random combinations of ASCII characters as eyes and mouth.
+Creates emoticons by using random ASCII character combinations for the eyes and mouth.
 
 ## Requirements
 - Python 3
